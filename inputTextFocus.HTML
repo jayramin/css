@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body {
+		 background-color: #fff;
+		}
+		:focus {
+		 outline: none;
+		}
+		input[type="text"] {
+		 width: 100%;
+		}
+		.container {
+		 width: 200px;
+		 position: relative;
+		}
+		.input {
+		 border: 0;
+		 padding: 10px 0;
+		 border-bottom: 1px solid #ccc;
+		}
+		.input ~ .border {
+		 position: absolute;
+		 bottom: 0;
+		 left: 0;
+		 width: 0;
+		 height: 2px;
+		 background-color: #27ad8a;
+		}
+		.input:focus ~ .border {
+		 width: 100%;
+		 transition: 0.5s;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+ <input class="input" id="txtFirstName" type="text" placeholder="First Name">
+ <span class="border"></span>
+</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!-- Understand +, > and ~ symbols in CSS Selector - Jay Amin
+It explains How to use different signs (+,> and ~) in CSS selector and their differences. Before starting, let us take a sample code to understand the signs. -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		/* Space Selector START. */
+		/*It will target all p tags within container div*/
+		div#container p{
+		font-weight:bold;
+		}
+		/*Space Selector END. */
+
+
+		/* > Sign START */
+
+		/*It will target all P element which are direct children of container div, not children of child div.*/
+		div#container > p {
+		  border: 1px solid black;
+		}
+		/* > Sign END */
+
+
+		/* + Sign START.*/
+		/*It is Adjacent sibling combinator. It combines two sequences of simple selectors having the same parent and the second one must come IMMEDIATELY after the first*/
+		div + p {  
+		   color: green;  
+		} 
+		/* + Sign END.*/
+
+
+		/* ~ Sign: START. */
+		/* It is general sibling combinator and similar to Adjacent sibling combinator. the difference is that the second selector does NOT have to immediately follow the first one means It will select all elements that is preceded by the former selector */
+		div ~ p{
+		background-color:blue;
+		} 
+		/* ~ Sign END. */
+	</style>
+
+</head>
+<body>
+<div id="container">            
+   <p>First</p>
+    <div>
+        <p>Child Paragraph</p>
+    </div>
+   <p>Second</p>
+   <p>Third</p>      
+</div>
+</body>
+</html>
